@@ -1,4 +1,4 @@
-# Grocery Store Management System (MySQL)
+# Grocery Store Management 
 
 ## Project Overview
 This project is a Grocery Store Management System developed using MySQL. It demonstrates relational database design and business analysis using SQL queries.
