@@ -315,7 +315,7 @@ ON OD.PROD_ID=P.PROD_ID;
 # key analysis questions
 
 
--- Which category generated the highest sales revenue?
+# Which category generated the highest sales revenue?
 
 SELECT  C.CAT_NAME,SUM(OD.TOTAL_PRICE) AS HIGHEST_REVENUE_CATEGORY
 FROM CATEGORIES C
@@ -328,7 +328,7 @@ ORDER BY HIGHEST_REVENUE_CATEGORY DESC
 limit 1;
 
 
--- Which supplier generated the highest sales revenue through its products?
+# Which supplier generated the highest sales revenue through its products?
 
 SELECT S.SUP_ID,S.SUP_NAME,SUM(OD.TOTAL_PRICE) AS HIGHEST_REVENUE
 FROM PRODUCTS P
@@ -340,7 +340,7 @@ GROUP BY S.SUP_ID
 ORDER BY HIGHEST_REVENUE DESC;
 
 
--- Using a CTE, find categories whose sales revenue is above the average category revenue.
+# Using a CTE, find categories whose sales revenue is above the average category revenue.
 
 WITH AVERAGE_CTE AS 
 (SELECT C.CAT_NAME,SUM(OD.TOTAL_PRICE) AS TOTAL_CATEGORY_PRICE
@@ -355,7 +355,7 @@ FROM AVERAGE_CTE
 WHERE TOTAL_CATEGORY_PRICE > (SELECT AVG(TOTAL_CATEGORY_PRICE) FROM AVERAGE_CTE);
 
 
--- Using a CTE find the total sales revenue of each category
+# Using a CTE find the total sales revenue of each category
 
 WITH TOTAL_REVENUE AS (SELECT C.CAT_NAME,SUM(OD.TOTAL_PRICE) AS TOTAL_CATEGORY_PRICE
 FROM PRODUCTS P
